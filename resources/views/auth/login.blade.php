@@ -9,7 +9,7 @@
             @csrf
             <div>
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" class="form-control">
+                <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}">
                 <x-validation-message name="email"/>
             </div>
             <div>

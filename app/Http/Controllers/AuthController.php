@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
@@ -74,12 +75,21 @@ class AuthController extends Controller
                 // status login
                 Session::put('login',TRUE);
 
-                return redirect()->route('home')->with('success', 'lol');
+                if (Session::get('role_id') !== 1) {
+                    return redirect()->route('home')->with('success', 'lol');
+                } else {
+                    return redirect()->route('dashboard')->with('success', 'lol');
+                }
             } else {
-                return redirect()->back();
+                throw ValidationException::withMessages([
+                    'password' => 'Wrong password',
+                ]);
             }
         } else {
-            return redirect()->back();
+            throw ValidationException::withMessages([
+                'email' => "No account registered with this email",
+                'password' => 'Wrong password',
+            ]);
         }
 
     }
