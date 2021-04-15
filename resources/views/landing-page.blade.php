@@ -13,7 +13,7 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#about">News</a></li>
+                <li><a href="#">News</a></li>
             </ul>
         </nav>
         @if (!session('login'))
@@ -23,7 +23,10 @@
           <div class="dropdown">
             <span class="greet-name">{{ session('name') }}</span> 
             <div class="dropdown-content">
-            <a href="{{ route('logout') }}">Logout</a>
+            @if (session('role_id') == 1)
+            <a href="{{ route('dashboard') }}" class="dropdown-link">Dashboard</a>
+            @endif
+            <a href="{{ route('logout') }}" class="dropdown-link">Logout</a>
             </div>
           </div>
         @endif
