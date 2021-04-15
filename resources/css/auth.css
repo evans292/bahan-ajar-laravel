@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Raleway:wght@100;200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    background-image: url('/img/sumedang2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 500px;
+    height: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #0088a9;
+}
+
+form {
+    padding: 30px;
+}
+
+label {
+    display: block;
+}
+
+.form-control {
+    padding: 10px;
+    margin: 10px 0px;
+    width: 100%;
+    outline: none;
+    border: solid 0.5px #aaa;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-control:focus {
+    border: solid 0.5px #333;
+}
+
+button {
+    margin-top: 8px;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 136, 169, 1);
+    padding: 9px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;
+    margin-right: 5px;
+    color: #edf0f1;
+    font-family: 'Montserrat', sans-serif;
+    float: right;
+}
+
+button:hover {
+    background-color: rgba(8, 106, 131, 1);
+}
