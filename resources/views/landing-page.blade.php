@@ -23,10 +23,10 @@
           <div class="dropdown">
             <span class="greet-name">{{ session('name') }}</span> 
             <div class="dropdown-content">
-            @if (session('role_id') == 1)
-            <a href="{{ route('dashboard') }}" class="dropdown-link">Dashboard</a>
-            @endif
-            <a href="{{ route('logout') }}" class="dropdown-link">Logout</a>
+                @if (session('role_id') == 1)
+                <a href="{{ route('dashboard') }}">Dashboard</a>
+                @endif
+                <a href="{{ route('logout') }}">Logout</a>
             </div>
           </div>
         @endif
