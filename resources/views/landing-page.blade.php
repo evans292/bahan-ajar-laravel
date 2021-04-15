@@ -21,7 +21,7 @@
             <a href="{{ route('register') }}"><button>Register</button></a>
         @else 
           <div class="dropdown">
-            <span class="greet-name">{{ session('name') }}</span> 
+            <span class="greet-name">halo, {{ session('name') }} !</span> 
             <div class="dropdown-content">
                 @if (session('role_id') == 1)
                 <a href="{{ route('dashboard') }}">Dashboard</a>

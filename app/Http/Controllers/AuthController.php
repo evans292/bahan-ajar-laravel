@@ -69,6 +69,7 @@ class AuthController extends Controller
             // cek password
             if (Hash::check($pass, $user->password)) {
                 // isi session user yang login
+                Session::put('user_id', $user->id);
                 Session::put('role_id', $user->role_id);
                 Session::put('name', $user->name);
                 Session::put('email', $user->email);

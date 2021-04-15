@@ -27,7 +27,15 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'session'], function(){
 
-    Route::group(['middleware' => 'role:admin'], function() {
+    Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function() {
         Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+
+        Route::get('news', [AdminController::class, 'newsIndex'])->name('news.index');
+        Route::get('news/create', [AdminController::class, 'newsCreate'])->name('news.create');
+        Route::post('news', [AdminController::class, 'newsStore'])->name('news.store');
+        Route::get('news/{news}', [AdminController::class, 'newsShow'])->name('news.show');
+        Route::get('news/{news}/edit', [AdminController::class, 'newsEdit'])->name('news.edit');
+        Route::patch('news/{news}', [AdminController::class, 'newsUpdate'])->name('news.update');  
+        Route::delete('news/{news}', [AdminController::class, 'newsDelete'])->name('news.delete');  
     });
 });
