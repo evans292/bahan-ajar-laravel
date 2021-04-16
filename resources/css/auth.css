@@ -32,6 +32,15 @@ body {
     border-radius: 10px;
 }
 
+.big-box {
+    width: 80%;
+    height: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+}
+
 h1 {
     text-align: center;
     color: #0088a9;
@@ -77,4 +86,23 @@ button {
 
 button:hover {
     background-color: rgba(8, 106, 131, 1);
+}
+
+.card {
+    display: flex;
+    border-bottom: solid 0.5px #aaa;
+}
+
+.card-img {
+    width: 200px;
+    height: 200px;
+}
+
+.card-content {
+    margin-left: 10px;
+}
+
+p {
+    text-align: justify;
+    margin-top: 50px;
 }

@@ -13,7 +13,7 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#">News</a></li>
+                <li><a href="{{ route('news.all') }}">News</a></li>
             </ul>
         </nav>
         @if (!session('login'))

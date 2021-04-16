@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\People\PeopleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,4 +39,6 @@ Route::group(['middleware' => 'session'], function(){
         Route::patch('news/{news}', [AdminController::class, 'newsUpdate'])->name('news.update');  
         Route::delete('news/{news}', [AdminController::class, 'newsDelete'])->name('news.delete');  
     });
+
+    Route::get('news', [PeopleController::class, 'news'])->name('news.all');
 });
